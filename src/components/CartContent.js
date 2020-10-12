@@ -32,7 +32,7 @@ function CartContent({ guitar, index, removeFromCart }) {
           +
         </button>
       </td>
-      <td>total</td>
+      <td>{`${quantity * price} $`}</td>
 
       <td>
         <button
