@@ -2,15 +2,6 @@ import React from "react";
 import CartContent from "./CartContent";
 
 function MyCart({ guitars, removeFromCart }) {
-  let content = guitars.map((guitar, index) => (
-    <CartContent
-      guitar={guitar}
-      key={index}
-      index={index}
-      removeFromCart={removeFromCart}
-    />
-  ));
-
   return (
     <div className="container">
       <div className="row">
@@ -32,7 +23,16 @@ function MyCart({ guitars, removeFromCart }) {
                     <th>removeCart</th>
                   </tr>
                 </thead>
-                <tbody>{content}</tbody>
+                <tbody>
+                  {guitars.map((guitar, index) => (
+                    <CartContent
+                      guitar={guitar}
+                      key={index}
+                      index={index}
+                      removeFromCart={removeFromCart}
+                    />
+                  ))}
+                </tbody>
               </table>
             </div>
           )}

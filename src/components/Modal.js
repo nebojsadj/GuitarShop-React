@@ -28,13 +28,13 @@ function Modal({ guitarToCart }) {
               </div>
               <div className="row mt-3">
                 <div className="col-8 offset-3">
-                  {guitarAdd ? (
+                  {guitarAdd && (
                     <img
                       src={`/imgs/${guitarAdd.img}.jpg`}
                       alt="img"
                       width="200"
                     />
-                  ) : null}
+                  )}
                 </div>
               </div>
               <div className="row">
