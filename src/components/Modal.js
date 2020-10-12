@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 
 function Modal({ guitarToCart }) {
   const history = useHistory();
-  let copyArray = [].concat(guitarToCart);
-  let guitarAdd = copyArray.pop();
+  const copyCart = [].concat(guitarToCart);
+  const guitarInCart = copyCart.pop();
 
   return (
     <div
@@ -24,13 +24,15 @@ function Modal({ guitarToCart }) {
           <div className="modal-body">
             <div className="container">
               <div className="row">
-                <h4 className="text-center">{guitarAdd && guitarAdd.name}</h4>
+                <h4 className="text-center">
+                  {guitarInCart && guitarInCart.name}
+                </h4>
               </div>
               <div className="row mt-3">
                 <div className="col-8 offset-3">
-                  {guitarAdd && (
+                  {guitarInCart && (
                     <img
-                      src={`/imgs/${guitarAdd.img}.jpg`}
+                      src={`/imgs/${guitarInCart.img}.jpg`}
                       alt="img"
                       width="200"
                     />
@@ -40,7 +42,7 @@ function Modal({ guitarToCart }) {
               <div className="row">
                 <div className="col-4 offset-4">
                   <h5 className="text-center mt-3 price">
-                    {guitarAdd && `${guitarAdd.price} $`}
+                    {guitarInCart && `${guitarInCart.price} $`}
                   </h5>
                 </div>
               </div>
