@@ -43,13 +43,12 @@ function Display({ guitar, addToCart, inCart }) {
               <div className="row mt-4">
                 <div className="col-10 offset-1">
                   <ul className="list-group-flush">
-                    {guitar
-                      ? guitar.description.map((el, index) => (
-                          <li className="list-group-item" key={index}>
-                            {el}
-                          </li>
-                        ))
-                      : null}
+                    {guitar &&
+                      guitar.description.map((el, index) => (
+                        <li className="list-group-item" key={index}>
+                          {el}
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
