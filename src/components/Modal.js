@@ -24,9 +24,7 @@ function Modal({ guitarToCart }) {
           <div className="modal-body">
             <div className="container">
               <div className="row">
-                <h4 className="text-center">
-                  {guitarAdd ? guitarAdd.name : null}
-                </h4>
+                <h4 className="text-center">{guitarAdd && guitarAdd.name}</h4>
               </div>
               <div className="row mt-3">
                 <div className="col-8 offset-3">
@@ -42,7 +40,7 @@ function Modal({ guitarToCart }) {
               <div className="row">
                 <div className="col-4 offset-4">
                   <h5 className="text-center mt-3 price">
-                    {guitarAdd ? `${guitarAdd.price} $` : null}
+                    {guitarAdd && `${guitarAdd.price} $`}
                   </h5>
                 </div>
               </div>

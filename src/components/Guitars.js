@@ -15,7 +15,7 @@ function Guitars() {
                   <h3 className="font-italic text-light">Electric guitars</h3>
                 </div>
                 <Link to="/electric" className="card-body">
-                  <img src={ibanez} alt="" width="400" />
+                  <img src={ibanez} alt="imgIbanez" width="400" />
                 </Link>
               </div>
             </div>
@@ -25,7 +25,7 @@ function Guitars() {
                   <h3 className="font-italic text-light">Acoustic guitars</h3>
                 </div>
                 <Link to="/acoustic" className="card-body">
-                  <img src={yamaha} alt="" width="400" height="270" />
+                  <img src={yamaha} alt="imgYamaha" width="400" height="270" />
                 </Link>
               </div>
             </div>
