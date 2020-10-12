@@ -2,36 +2,37 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Acoustic({ acoustic, displayMore, addToCart, inCart }) {
+  const { id, name, img, price, text } = acoustic;
   return (
     <div className="card mt-4">
-      <div className="card-header bg-secondary text-white">{acoustic.name}</div>
+      <div className="card-header bg-secondary text-white">{name}</div>
       <div className="card-body">
         <div className="row">
           <div className="col-4">
             <img
-              src={`imgs/${acoustic.img}.jpg`}
+              src={`imgs/${img}.jpg`}
               alt="img"
               width="160"
               className="img"
             />
           </div>
           <div className="col-8 font-italic">
-            <p>{`${acoustic.text.substring(0, 220)}...`}</p>
+            <p>{`${text.substring(0, 220)}...`}</p>
             <div className="col-10">
-              <h3 className="float-right price">{`${acoustic.price} $`}</h3>
+              <h3 className="float-right price">{`${price} $`}</h3>
             </div>
           </div>
         </div>
       </div>
       <div className="card-footer">
         <Link
-          to={"/display/" + acoustic.id}
-          onClick={() => displayMore(acoustic.id)}
+          to={"/display/" + id}
+          onClick={() => displayMore(id)}
           className="btn btn-info btn-sm float-left"
         >
           Show more
         </Link>
-        {inCart.indexOf(acoustic.id) === -1 ? (
+        {inCart.indexOf(id) === -1 ? (
           <button
             onClick={() => addToCart(acoustic)}
             className="btn btn-danger btn-sm float-right"
