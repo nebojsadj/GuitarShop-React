@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 
 function CartContent({ guitar, index, removeFromCart }) {
-  console.log(guitar);
-
+  const { id, name, img, price } = guitar;
   const [quantity, setQuantity] = useState(1);
 
   return (
     <tr className="bg-light">
       <td>{index + 1}</td>
-      <td>{guitar.name}</td>
+      <td>{name}</td>
       <td>
-        <img src={`/imgs/${guitar.img}.jpg`} alt="img" width="90" />
+        <img src={`/imgs/${img}.jpg`} alt="img" width="90" />
       </td>
-      <td>{`${guitar.price} $`}</td>
+      <td>{`${price} $`}</td>
       <td>
         <button
           onClick={() => setQuantity((quantity) => quantity + 1)}
@@ -25,7 +24,7 @@ function CartContent({ guitar, index, removeFromCart }) {
 
       <td>
         <button
-          onClick={() => removeFromCart(guitar.id)}
+          onClick={() => removeFromCart(id)}
           className="btn btn-danger btn-sm"
         >
           remove
