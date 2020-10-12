@@ -1,9 +1,6 @@
 import React from "react";
 
 function Display({ guitar, addToCart, inCart }) {
-  console.log(guitar);
-  console.log(inCart);
-
   const { id, name, img, text, price } = guitar;
 
   return (
