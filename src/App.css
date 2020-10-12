@@ -51,3 +51,12 @@ tbody {
 .modalH2 {
     margin-left: 110px;
 }
+
+.quantity {
+    width: 30px;
+    height: 32px;
+    border: 1px solid black;
+    margin-top: 3px;
+    margin-left: 18px;
+    text-align: center;
+}

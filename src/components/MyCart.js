@@ -18,7 +18,9 @@ function MyCart({ guitars, removeFromCart }) {
                     <th>name</th>
                     <th>img</th>
                     <th>price</th>
+                    <th>less</th>
                     <th>quantity</th>
+                    <th>more</th>
                     <th>total</th>
                     <th>removeCart</th>
                   </tr>

@@ -14,10 +14,22 @@ function CartContent({ guitar, index, removeFromCart }) {
       <td>{`${price} $`}</td>
       <td>
         <button
+          disabled={quantity === 1}
+          onClick={() => setQuantity((quantity) => quantity - 1)}
+          className="btn btn-warning btn-sm"
+        >
+          -
+        </button>
+      </td>
+      <td>
+        <div className="quantity">{quantity}</div>
+      </td>
+      <td>
+        <button
           onClick={() => setQuantity((quantity) => quantity + 1)}
           className="btn btn-warning btn-sm"
         >
-          {quantity}
+          +
         </button>
       </td>
       <td>total</td>
