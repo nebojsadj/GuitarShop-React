@@ -2,36 +2,37 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Electric({ electric, displayMore, addToCart, inCart }) {
+  const { id, name, img, text, price } = electric;
   return (
     <div className="card mt-4">
-      <div className="card-header bg-secondary text-white">{electric.name}</div>
+      <div className="card-header bg-secondary text-white">{name}</div>
       <div className="card-body">
         <div className="row">
           <div className="col-4">
             <img
-              src={`imgs/${electric.img}.jpg`}
+              src={`imgs/${img}.jpg`}
               alt="img"
               width="160"
               className="img"
             />
           </div>
           <div className="col-8 font-italic">
-            <p>{`${electric.text.substring(0, 220)}...`}</p>
+            <p>{`${text.substring(0, 220)}...`}</p>
             <div className="col-10">
-              <h3 className="float-right price">{`${electric.price} $`}</h3>
+              <h3 className="float-right price">{`${price} $`}</h3>
             </div>
           </div>
         </div>
       </div>
       <div className="card-footer">
         <Link
-          to={"/display/" + electric.id}
-          onClick={() => displayMore(electric.id)}
+          to={"/display/" + id}
+          onClick={() => displayMore(id)}
           className="btn btn-info btn-sm float-left"
         >
           Show more
         </Link>
-        {inCart.indexOf(electric.id) === -1 ? (
+        {inCart.indexOf(id) === -1 ? (
           <button
             onClick={() => addToCart(electric)}
             className="btn btn-danger btn-sm float-right"
