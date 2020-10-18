@@ -22,7 +22,7 @@ function App() {
       <Route path="/electric">
         <ElectricGuitars />
       </Route>
-      <Route path="/display/:id">
+      <Route path="/display">
         <Display />
       </Route>
       <Route path="/cart">

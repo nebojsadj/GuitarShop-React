@@ -37,7 +37,7 @@ function Electric({ electric }) {
       </div>
       <div className="card-footer">
         <Link
-          to={"/display/" + id}
+          to={"/display"}
           onClick={() => dispatch(display_more_action(id))}
           className="btn btn-info btn-sm float-left"
         >
