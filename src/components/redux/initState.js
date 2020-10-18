@@ -3,7 +3,7 @@ const initState = {
     {
       id: 1,
       type: "electric",
-      name: "Squier By Fender Vintage Modified '70s Stratocaster® MN BLK",
+      name: "Squier By Fender Vintage BLK",
       text: `With a body based off of one of the most notable guitars in history and dressed in vintage white, the Squier Vintage Modified ‘70s Stratocaster electric guitar looks wonderfully familiar. Squier tweaks the classic to give it a custom look and feel. Modified means adding new twists to familiar designs. Squier's Vintage Modified series excels at just that, imparting hot-output chop-shop sound, feel and value to traditional instrument designs.`,
       description: [
         "Model #: 1148100559",
@@ -40,7 +40,7 @@ const initState = {
     {
       id: 2,
       type: "electric",
-      name: "Squier By Fender Vintage Modified Surf Stratocaster® RW SFG",
+      name: "Squier By Fender Vintage SFG",
       text: `With a body based off of one of the most notable guitars in history and dressed in vintage white, the Squier Vintage Modified ‘70s Stratocaster electric guitar looks wonderfully familiar. Squier tweaks the classic to give it a custom look and feel. Modified means adding new twists to familiar designs. Squier's Vintage Modified series excels at just that, imparting hot-output chop-shop sound, feel and value to traditional instrument designs.`,
       description: [
         "Model #: 1148100559",
@@ -77,7 +77,7 @@ const initState = {
     {
       id: 3,
       type: "electric",
-      name: "Epiphone Les Paul Ultra-III Midnight Ebony Nickel",
+      name: "Epiphone Les Paul Ultra-III",
       text: `With a body based off of one of the most notable guitars in history and dressed in vintage white, the Squier Vintage Modified ‘70s Stratocaster electric guitar looks wonderfully familiar. Squier tweaks the classic to give it a custom look and feel. Modified means adding new twists to familiar designs. Squier's Vintage Modified series excels at just that, imparting hot-output chop-shop sound, feel and value to traditional instrument designs.`,
       description: [
         "Model #: 1148100559",
@@ -114,7 +114,7 @@ const initState = {
     {
       id: 4,
       type: "electric",
-      name: "Epiphone Les Paul Tribute Plus Outfit Black Cherry Nickel ",
+      name: "Epiphone Les Paul Tribute",
       text: `With a body based off of one of the most notable guitars in history and dressed in vintage white, the Squier Vintage Modified ‘70s Stratocaster electric guitar looks wonderfully familiar. Squier tweaks the classic to give it a custom look and feel. Modified means adding new twists to familiar designs. Squier's Vintage Modified series excels at just that, imparting hot-output chop-shop sound, feel and value to traditional instrument designs.`,
       description: [
         "Model #: 1148100559",
