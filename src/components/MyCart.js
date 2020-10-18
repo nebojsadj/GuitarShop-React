@@ -1,13 +1,16 @@
 import React from "react";
 import CartContent from "./CartContent";
+import { useSelector } from "react-redux";
 
-function MyCart({ guitars, removeFromCart }) {
+function MyCart() {
+  const inCart = useSelector((state) => state.guitars.inCart);
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
           <h2 className="text-dark text-center mt-4">My shopping cart</h2>
-          {guitars.length === 0 ? (
+          {inCart.length === 0 ? (
             <h1 className="text-center text-danger">Your cart is empty!</h1>
           ) : (
             <div className="col-12 mt-4">
@@ -26,13 +29,8 @@ function MyCart({ guitars, removeFromCart }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {guitars.map((guitar, index) => (
-                    <CartContent
-                      guitar={guitar}
-                      key={index}
-                      index={index}
-                      removeFromCart={removeFromCart}
-                    />
+                  {inCart.map((guitar, index) => (
+                    <CartContent guitar={guitar} key={index} index={index} />
                   ))}
                 </tbody>
               </table>

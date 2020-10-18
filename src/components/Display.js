@@ -1,7 +1,13 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { add_to_cart_action, item_added_to_cart_action } from "./redux/actions";
 
-function Display({ guitar, addToCart, inCart }) {
-  const { id, name, img, text, price } = guitar;
+function Display() {
+  const display = useSelector((state) => state.guitars.displayInstrument);
+  const inCart = useSelector((state) => state.guitars.inCart);
+  const idInCart = inCart.map((el) => el.id);
+  const dispatch = useDispatch();
+  const { id, name, img, text, price, description } = display;
 
   return (
     <div className="container">
@@ -20,9 +26,12 @@ function Display({ guitar, addToCart, inCart }) {
                   <div>
                     <div className="price">{`Our price: ${price} $`}</div>
                   </div>
-                  {inCart.indexOf(id) === -1 ? (
+                  {idInCart.indexOf(id) === -1 ? (
                     <button
-                      onClick={() => addToCart(guitar)}
+                      onClick={() => {
+                        dispatch(add_to_cart_action(display));
+                        dispatch(item_added_to_cart_action());
+                      }}
                       className="btn btn-danger add"
                       data-toggle="modal"
                       data-target="#exampleModalCenter"
@@ -40,12 +49,11 @@ function Display({ guitar, addToCart, inCart }) {
               <div className="row mt-4">
                 <div className="col-10 offset-1">
                   <ul className="list-group-flush">
-                    {guitar &&
-                      guitar.description.map((el, index) => (
-                        <li className="list-group-item" key={index}>
-                          {el}
-                        </li>
-                      ))}
+                    {description.map((el, index) => (
+                      <li className="list-group-item" key={index}>
+                        {el}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

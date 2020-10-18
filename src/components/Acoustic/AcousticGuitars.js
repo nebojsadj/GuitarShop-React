@@ -1,21 +1,19 @@
 import React from "react";
-import { acousticData } from "../Data";
 import Acoustic from "./Acoustic";
+import { useSelector } from "react-redux";
 
-function AcousticGuitars({ displayMore, addToCart, inCart }) {
+function AcousticGuitars() {
+  const guitars = useSelector((state) => state.guitars.guitars);
+  const acousticGuitars = guitars.filter((el) => el.type === "acoustic");
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-10 offset-1">
           <div className="row">
-            {acousticData.map((acoustic, index) => (
+            {acousticGuitars.map((acoustic, index) => (
               <div className="col-12" key={index}>
-                <Acoustic
-                  acoustic={acoustic}
-                  displayMore={displayMore}
-                  addToCart={addToCart}
-                  inCart={inCart}
-                />
+                <Acoustic acoustic={acoustic} />
               </div>
             ))}
           </div>

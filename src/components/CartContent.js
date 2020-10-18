@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { remove_from_cart_action } from "./redux/actions";
 
-function CartContent({ guitar, index, removeFromCart }) {
-  const { id, name, img, price } = guitar;
+function CartContent({ guitar, index }) {
   const [quantity, setQuantity] = useState(1);
+  const { id, name, img, price } = guitar;
+  const dispatch = useDispatch();
 
   return (
     <tr className="bg-light">
@@ -36,7 +39,7 @@ function CartContent({ guitar, index, removeFromCart }) {
 
       <td>
         <button
-          onClick={() => removeFromCart(id)}
+          onClick={() => dispatch(remove_from_cart_action(id))}
           className="btn btn-danger btn-sm"
         >
           remove

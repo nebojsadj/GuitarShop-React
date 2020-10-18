@@ -1,8 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  display_more_action,
+  add_to_cart_action,
+  item_added_to_cart_action,
+} from "../redux/actions";
 
-function Electric({ electric, displayMore, addToCart, inCart }) {
+function Electric({ electric }) {
+  const inCart = useSelector((state) => state.guitars.inCart);
+  const idInCart = inCart.map((el) => el.id);
+  const dispatch = useDispatch();
+
   const { id, name, img, text, price } = electric;
+
   return (
     <div className="card mt-4">
       <div className="card-header bg-secondary text-white">{name}</div>
@@ -27,14 +38,17 @@ function Electric({ electric, displayMore, addToCart, inCart }) {
       <div className="card-footer">
         <Link
           to={"/display/" + id}
-          onClick={() => displayMore(id)}
+          onClick={() => dispatch(display_more_action(id))}
           className="btn btn-info btn-sm float-left"
         >
           Show more
         </Link>
-        {inCart.indexOf(id) === -1 ? (
+        {idInCart.indexOf(id) === -1 ? (
           <button
-            onClick={() => addToCart(electric)}
+            onClick={() => {
+              dispatch(add_to_cart_action(electric));
+              dispatch(item_added_to_cart_action());
+            }}
             className="btn btn-danger btn-sm float-right"
             data-toggle="modal"
             data-target="#exampleModalCenter"

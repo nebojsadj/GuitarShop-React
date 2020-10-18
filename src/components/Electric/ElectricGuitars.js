@@ -1,21 +1,19 @@
 import React from "react";
-import { electricData } from "../Data";
 import Electric from "./Electric";
+import { useSelector } from "react-redux";
 
-function ElectricGuitars({ displayMore, addToCart, inCart }) {
+function ElectricGuitars() {
+  const guitars = useSelector((state) => state.guitars.guitars);
+  const electricGuitars = guitars.filter((el) => el.type === "electric");
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-10 offset-1">
           <div className="row">
-            {electricData.map((electric, index) => (
+            {electricGuitars.map((electric, index) => (
               <div className="col-12" key={index}>
-                <Electric
-                  electric={electric}
-                  displayMore={displayMore}
-                  addToCart={addToCart}
-                  inCart={inCart}
-                />
+                <Electric electric={electric} />
               </div>
             ))}
           </div>
