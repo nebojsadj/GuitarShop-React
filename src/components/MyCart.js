@@ -1,6 +1,7 @@
 import React from "react";
 import CartContent from "./CartContent";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function MyCart() {
   const inCart = useSelector((state) => state.guitars.inCart);
@@ -36,6 +37,18 @@ function MyCart() {
               </table>
             </div>
           )}
+          <div className="row mt-5">
+            {inCart.length > 0 && (
+              <div className="col-4 offset-4">
+                <Link to="/" className="btn btn-primary form-control">
+                  Continue shopping
+                </Link>
+                <button className="btn btn-success form-control mt-4">
+                  Order products
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

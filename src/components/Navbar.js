@@ -9,7 +9,7 @@ function Navbar() {
       </Link>
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <NavLink to="/" exact className="nav-link text-light">
+          <NavLink to="/" exact className="btn btn-outline-danger text-light">
             Guitars
           </NavLink>
         </li>
