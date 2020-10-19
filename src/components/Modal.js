@@ -24,25 +24,21 @@ function Modal() {
           <div className="modal-body">
             <div className="container">
               <div className="row">
-                <h4 className="text-center">
-                  {itemAddedToCart !== "" && itemAddedToCart.name}
-                </h4>
+                <h4 className="text-center">{itemAddedToCart.name}</h4>
               </div>
               <div className="row mt-3">
                 <div className="col-8 offset-3">
-                  {itemAddedToCart !== "" && (
-                    <img
-                      src={`/imgs/${itemAddedToCart.img}.jpg`}
-                      alt="img"
-                      width="200"
-                    />
-                  )}
+                  <img
+                    src={`/imgs/${itemAddedToCart.img}.jpg`}
+                    alt="img"
+                    width="200"
+                  />
                 </div>
               </div>
               <div className="row">
                 <div className="col-4 offset-4">
                   <h5 className="text-center mt-3 price">
-                    {itemAddedToCart !== "" && `${itemAddedToCart.price} $`}
+                    {`${itemAddedToCart.price} $`}
                   </h5>
                 </div>
               </div>
