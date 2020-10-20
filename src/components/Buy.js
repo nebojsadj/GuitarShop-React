@@ -5,7 +5,7 @@ import Item from "./Item";
 function Buy() {
   const info = useSelector((state) => state.guitars.personalInfo);
   const buy = useSelector((state) => state.guitars.buy);
-  console.log(info);
+  const { name, lastName, email, phone, streetNumber, cityPostNumber } = info;
 
   return (
     <div className="container">
@@ -20,12 +20,12 @@ function Buy() {
                 Your personal information
               </h3>
               <ul className="list-group-flush mt-4">
-                <li className="list-group-item info">{`Name : ${info.name}`}</li>
-                <li className="list-group-item info">{`LastName : ${info.lastName}`}</li>
-                <li className="list-group-item info">{`Email : ${info.email}`}</li>
-                <li className="list-group-item info">{`Phone : ${info.phone}`}</li>
-                <li className="list-group-item info">{`StreetNumber : ${info.streetNumber}`}</li>
-                <li className="list-group-item info">{`CityPostNumber : ${info.cityPostNumber}`}</li>
+                <li className="list-group-item info">{`Name : ${name}`}</li>
+                <li className="list-group-item info">{`LastName : ${lastName}`}</li>
+                <li className="list-group-item info">{`Email : ${email}`}</li>
+                <li className="list-group-item info">{`Phone : ${phone}`}</li>
+                <li className="list-group-item info">{`StreetNumber : ${streetNumber}`}</li>
+                <li className="list-group-item info">{`CityPostNumber : ${cityPostNumber}`}</li>
               </ul>
             </div>
           </div>
