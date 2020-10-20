@@ -1,13 +1,14 @@
 import React from "react";
 
 function Item({ item }) {
+  const { index, name, price, quantity, total } = item;
   return (
     <tr>
-      <td>{item.index}</td>
-      <td>{item.name}</td>
-      <td>{`${item.price} $`}</td>
-      <td>{item.quantity}</td>
-      <td>{`${item.total} $`}</td>
+      <td>{index}</td>
+      <td>{name}</td>
+      <td>{`${price} $`}</td>
+      <td>{quantity}</td>
+      <td>{`${total} $`}</td>
     </tr>
   );
 }
