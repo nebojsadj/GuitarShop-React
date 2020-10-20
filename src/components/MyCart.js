@@ -26,7 +26,8 @@ function MyCart() {
                     <th>quantity</th>
                     <th>more</th>
                     <th>total</th>
-                    <th>removeCart</th>
+                    <th>remove</th>
+                    <th>buyItem</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -43,9 +44,9 @@ function MyCart() {
                 <Link to="/" className="btn btn-primary form-control">
                   Continue shopping
                 </Link>
-                <button className="btn btn-success form-control mt-4">
-                  Order products
-                </button>
+                <Link to="/order" className="btn btn-success form-control mt-4">
+                  Confirm Buy
+                </Link>
               </div>
             )}
           </div>

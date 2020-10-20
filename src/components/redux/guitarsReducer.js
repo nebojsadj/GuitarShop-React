@@ -4,6 +4,8 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   ITEM_ADDED_TO_CART,
+  BUY_ITEM,
+  PERSONAL_INFORMATION,
 } from "./types";
 
 function guitarsReducer(state = initState, action) {
@@ -23,6 +25,10 @@ function guitarsReducer(state = initState, action) {
       const copyInCart = [].concat(state.inCart);
       const item = copyInCart.pop();
       return { ...state, itemAddedToCart: item };
+    case PERSONAL_INFORMATION:
+      return { ...state, personalInfo: action.payload };
+    case BUY_ITEM:
+      return { ...state, buy: [...state.buy, action.payload] };
 
     default:
       return state;

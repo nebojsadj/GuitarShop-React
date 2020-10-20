@@ -2,3 +2,5 @@ export const DISPLAY_MORE = "DISPLAY_MORE";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const ITEM_ADDED_TO_CART = "ITEM_ADDED_TO_CART";
+export const PERSONAL_INFORMATION = "PERSONAL_INFORMATION";
+export const BUY_ITEM = "BUY_ITEM";

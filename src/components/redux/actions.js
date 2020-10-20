@@ -3,6 +3,8 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   ITEM_ADDED_TO_CART,
+  BUY_ITEM,
+  PERSONAL_INFORMATION,
 } from "./types";
 
 export const display_more_action = (id) => {
@@ -29,5 +31,25 @@ export const remove_from_cart_action = (id) => {
 export const item_added_to_cart_action = () => {
   return {
     type: ITEM_ADDED_TO_CART,
+  };
+};
+
+export const personal_info_action = (info) => {
+  return {
+    type: PERSONAL_INFORMATION,
+    payload: info,
+  };
+};
+
+export const buy_item_action = (index, name, price, quantity, total) => {
+  return {
+    type: BUY_ITEM,
+    payload: {
+      index: index,
+      name: name,
+      price: price,
+      quantity: quantity,
+      total: total,
+    },
   };
 };

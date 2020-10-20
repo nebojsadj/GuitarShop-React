@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { remove_from_cart_action } from "./redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { remove_from_cart_action, buy_item_action } from "./redux/actions";
 
 function CartContent({ guitar, index }) {
   const [quantity, setQuantity] = useState(1);
   const { id, name, img, price } = guitar;
   const dispatch = useDispatch();
+  const buy = useSelector((state) => state.guitars.buy);
 
   return (
     <tr className="bg-light">
@@ -39,10 +40,31 @@ function CartContent({ guitar, index }) {
 
       <td>
         <button
-          onClick={() => dispatch(remove_from_cart_action(id))}
+          onClick={() => {
+            dispatch(remove_from_cart_action(id));
+          }}
           className="btn btn-danger btn-sm"
         >
-          remove
+          Remove
+        </button>
+      </td>
+      <td>
+        <button
+          disabled={buy.map((el) => el.name).includes(name)}
+          onClick={() => {
+            dispatch(
+              buy_item_action(
+                index + 1,
+                name,
+                price,
+                quantity,
+                quantity * price
+              )
+            );
+          }}
+          className="btn btn-primary btn-sm"
+        >
+          Buy $
         </button>
       </td>
     </tr>

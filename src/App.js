@@ -7,6 +7,8 @@ import AcousticGuitars from "./components/Acoustic/AcousticGuitars";
 import Display from "./components/Display";
 import MyCart from "./components/MyCart";
 import Modal from "./components/Modal";
+import Order from "./components/Order";
+import Buy from "./components/Buy";
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
       </Route>
       <Route path="/cart">
         <MyCart />
+      </Route>
+      <Route path="/order">
+        <Order />
+      </Route>
+      <Route path="/buy">
+        <Buy />
       </Route>
     </>
   );

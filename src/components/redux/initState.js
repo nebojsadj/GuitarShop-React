@@ -448,6 +448,8 @@ const initState = {
   displayInstrument: {},
   inCart: [],
   itemAddedToCart: {},
+  personalInfo: {},
+  buy: [],
 };
 
 export default initState;
