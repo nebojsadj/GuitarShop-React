@@ -9,6 +9,7 @@ import MyCart from "./components/MyCart";
 import Modal from "./components/Modal";
 import CustomersInfo from "./components/CustomersInfo";
 import Buy from "./components/Buy";
+import SuccessfulOrder from "./components/SuccessfulOrder";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
       </Route>
       <Route path="/buy">
         <Buy />
+      </Route>
+      <Route path="/successfulOrder">
+        <SuccessfulOrder />
       </Route>
     </>
   );

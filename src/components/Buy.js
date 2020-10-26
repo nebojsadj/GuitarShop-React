@@ -60,9 +60,13 @@ function Buy() {
           </div>
           <div className="row mt-4">
             <div className="col-8 offset-2">
-              <button className="btn btn-success float-right">
+              <Link
+                to="/successfulOrder"
+                onClick={() => dispatch(remove_all_from_cart_action())}
+                className="btn btn-success float-right"
+              >
                 Confirm order
-              </button>
+              </Link>
               <Link
                 to="/"
                 onClick={() => dispatch(remove_all_from_cart_action())}
