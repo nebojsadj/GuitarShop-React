@@ -42,6 +42,7 @@ function CartContent({ guitar, index }) {
         <button
           onClick={() => {
             dispatch(remove_from_cart_action(id));
+            console.log(buy);
           }}
           className="btn btn-danger btn-sm"
         >
@@ -52,7 +53,9 @@ function CartContent({ guitar, index }) {
         <button
           disabled={buy.map((el) => el.name).includes(name)}
           onClick={() => {
-            dispatch(buy_item_action(name, price, quantity, quantity * price));
+            dispatch(
+              buy_item_action(id, name, price, quantity, quantity * price)
+            );
           }}
           className="btn btn-primary btn-sm"
         >

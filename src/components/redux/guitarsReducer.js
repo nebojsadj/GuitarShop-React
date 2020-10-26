@@ -20,7 +20,8 @@ function guitarsReducer(state = initState, action) {
       };
     case REMOVE_FROM_CART:
       const inCart = state.inCart.filter((el) => el.id !== action.payload);
-      return { ...state, inCart: inCart };
+      const buy = state.buy.filter((el) => el.id !== action.payload);
+      return { ...state, inCart: inCart, buy: buy };
     case ITEM_ADDED_TO_CART:
       const copyInCart = [].concat(state.inCart);
       const item = copyInCart.pop();

@@ -65,11 +65,6 @@ function Buy() {
               </button>
             </div>
           </div>
-          {/* <div className="row mt-3">
-            <div className="col-4 offset-4 ">
-              <h2 className="text-success info">Thank you for your trust!</h2>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
