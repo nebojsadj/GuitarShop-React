@@ -6,6 +6,7 @@ import {
   ITEM_ADDED_TO_CART,
   BUY_ITEM,
   PERSONAL_INFORMATION,
+  REMOVE_ALL_FROM_CART,
 } from "./types";
 
 function guitarsReducer(state = initState, action) {
@@ -30,7 +31,8 @@ function guitarsReducer(state = initState, action) {
       return { ...state, personalInfo: action.payload };
     case BUY_ITEM:
       return { ...state, buy: [...state.buy, action.payload] };
-
+    case REMOVE_ALL_FROM_CART:
+      return { ...state, inCart: [], buy: [] };
     default:
       return state;
   }

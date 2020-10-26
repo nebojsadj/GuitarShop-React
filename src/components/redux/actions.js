@@ -5,6 +5,7 @@ import {
   ITEM_ADDED_TO_CART,
   BUY_ITEM,
   PERSONAL_INFORMATION,
+  REMOVE_ALL_FROM_CART,
 } from "./types";
 
 export const display_more_action = (id) => {
@@ -51,5 +52,11 @@ export const buy_item_action = (id, name, price, quantity, total) => {
       quantity: quantity,
       total: total,
     },
+  };
+};
+
+export const remove_all_from_cart_action = () => {
+  return {
+    type: REMOVE_ALL_FROM_CART,
   };
 };

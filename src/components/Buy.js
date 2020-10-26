@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Item from "./Item";
+import { Link } from "react-router-dom";
+import { remove_all_from_cart_action } from "./redux/actions";
 
 function Buy() {
   const info = useSelector((state) => state.guitars.personalInfo);
   const buy = useSelector((state) => state.guitars.buy);
   const { name, lastName, email, phone, streetNumber, cityPostNumber } = info;
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -60,9 +63,13 @@ function Buy() {
               <button className="btn btn-success float-right">
                 Confirm order
               </button>
-              <button className="btn btn-warning float-left">
+              <Link
+                to="/"
+                onClick={() => dispatch(remove_all_from_cart_action())}
+                className="btn btn-warning float-left"
+              >
                 Cancel order
-              </button>
+              </Link>
             </div>
           </div>
         </div>
