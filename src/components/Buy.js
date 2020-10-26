@@ -42,14 +42,23 @@ function Buy() {
                   </tr>
                 </thead>
                 <tbody>
-                  {buy.map((item) => (
-                    <Item item={item} key={item.index} />
+                  {buy.map((item, index) => (
+                    <Item item={item} key={index} />
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
           <div className="row mt-5">
+            <div className="col-6 offset-3 ">
+              <h3 className="text-danger info">
+                {buy.length > 0 &&
+                  `Total for payment:
+                ${buy.map((el) => el.total).reduce((a, b) => a + b)} $`}
+              </h3>
+            </div>
+          </div>
+          <div className="row mt-3">
             <div className="col-4 offset-4 ">
               <h2 className="text-success info">Thank you for your trust!</h2>
             </div>
