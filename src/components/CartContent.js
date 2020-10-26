@@ -42,7 +42,6 @@ function CartContent({ guitar, index }) {
         <button
           onClick={() => {
             dispatch(remove_from_cart_action(id));
-            console.log(buy);
           }}
           className="btn btn-danger btn-sm"
         >

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SuccessfulOrder() {
   return (
@@ -13,9 +14,9 @@ function SuccessfulOrder() {
           </h2>
           <div className="row">
             <div className="col-4 offset-4">
-              <button className="btn btn-primary form-control mt-5">
+              <Link to="/" className="btn btn-primary form-control mt-5">
                 Continue shopping
-              </button>
+              </Link>
             </div>
           </div>
         </div>
