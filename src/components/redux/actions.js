@@ -41,11 +41,10 @@ export const personal_info_action = (info) => {
   };
 };
 
-export const buy_item_action = (index, name, price, quantity, total) => {
+export const buy_item_action = (name, price, quantity, total) => {
   return {
     type: BUY_ITEM,
     payload: {
-      index: index,
       name: name,
       price: price,
       quantity: quantity,

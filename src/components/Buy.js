@@ -11,9 +11,6 @@ function Buy() {
     <div className="container">
       <div className="row">
         <div className="col-10 offset-1">
-          <h1 className="text-center text-success mt-4">
-            You have successfully placed your order!
-          </h1>
           <div className="row">
             <div className="col-8 offset-2">
               <h3 className=" mt-4 text-primary info">
@@ -58,11 +55,21 @@ function Buy() {
               </h3>
             </div>
           </div>
-          <div className="row mt-3">
+          <div className="row mt-4">
+            <div className="col-8 offset-2">
+              <button className="btn btn-success float-right">
+                Confirm order
+              </button>
+              <button className="btn btn-warning float-left">
+                Cancel order
+              </button>
+            </div>
+          </div>
+          {/* <div className="row mt-3">
             <div className="col-4 offset-4 ">
               <h2 className="text-success info">Thank you for your trust!</h2>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
