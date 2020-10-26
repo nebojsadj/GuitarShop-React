@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function MyCart() {
   const inCart = useSelector((state) => state.guitars.inCart);
+  const buy = useSelector((state) => state.guitars.buy);
 
   return (
     <div className="container">
@@ -44,7 +45,11 @@ function MyCart() {
                 <Link to="/" className="btn btn-primary form-control">
                   Continue shopping
                 </Link>
-                <Link to="/order" className="btn btn-success form-control mt-4">
+              </div>
+            )}
+            {buy.length > 0 && (
+              <div className="col-4 offset-4">
+                <Link to="/info" className="btn btn-success form-control mt-4">
                   Confirm Buy
                 </Link>
               </div>

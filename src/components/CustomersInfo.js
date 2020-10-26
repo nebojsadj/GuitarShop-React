@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { personal_info_action } from "./redux/actions";
 
-function Order() {
+function CustomersInfo() {
   const [info, setInfo] = useState({
     name: "",
     lastName: "",
@@ -102,4 +102,4 @@ function Order() {
   );
 }
 
-export default Order;
+export default CustomersInfo;
