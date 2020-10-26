@@ -1,10 +1,9 @@
 import React from "react";
 
 function Item({ item }) {
-  const { index, name, price, quantity, total } = item;
+  const { name, price, quantity, total } = item;
   return (
     <tr>
-      <td>{index}</td>
       <td>{name}</td>
       <td>{`${price} $`}</td>
       <td>{quantity}</td>

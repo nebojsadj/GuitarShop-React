@@ -35,7 +35,6 @@ function Buy() {
               <table className="table mt-4">
                 <thead>
                   <tr>
-                    <th>index</th>
                     <th>name</th>
                     <th>price</th>
                     <th>quantity</th>
