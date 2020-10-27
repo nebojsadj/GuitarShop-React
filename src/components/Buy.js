@@ -3,11 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Item from "./Item";
 import { Link } from "react-router-dom";
 import { remove_all_from_cart_action } from "./redux/actions";
+import PersonalInfo from "./PersonalInfo";
 
 function Buy() {
-  const info = useSelector((state) => state.guitars.personalInfo);
   const buy = useSelector((state) => state.guitars.buy);
-  const { name, lastName, email, phone, streetNumber, cityPostNumber } = info;
   const dispatch = useDispatch();
 
   return (
@@ -19,14 +18,7 @@ function Buy() {
               <h3 className=" mt-4 text-primary info">
                 Your personal information
               </h3>
-              <ul className="list-group-flush mt-4">
-                <li className="list-group-item info">{`Name : ${name}`}</li>
-                <li className="list-group-item info">{`LastName : ${lastName}`}</li>
-                <li className="list-group-item info">{`Email : ${email}`}</li>
-                <li className="list-group-item info">{`Phone : ${phone}`}</li>
-                <li className="list-group-item info">{`StreetNumber : ${streetNumber}`}</li>
-                <li className="list-group-item info">{`CityPostNumber : ${cityPostNumber}`}</li>
-              </ul>
+              {<PersonalInfo />}
             </div>
           </div>
           <div className="row">
