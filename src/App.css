@@ -1,66 +1,75 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .active {
-    border-bottom: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.nav {
+  color: white;
+}
+
+.nav:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .homeBg {
-    width: 100%;
-    opacity: 0.6;
+  width: 100%;
+  opacity: 0.6;
 }
 
 .mCard {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .card-header {
-    font-size: 22px;
-    font-style: oblique;
+  font-size: 22px;
+  font-style: oblique;
 }
 
 .price {
-    font-size: 26px;
-    text-align: center;
-    background-color: lightgreen;
+  font-size: 26px;
+  text-align: center;
+  background-color: lightgreen;
 }
 
 .add {
-    margin-top: 400px;
+  margin-top: 400px;
 }
 
 .img {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 th {
-    color: white;
-    background-color: rgba(115, 123, 133, 0.877);
+  color: white;
+  background-color: rgba(115, 123, 133, 0.877);
 }
 
 td {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 tbody {
-    background-color: white;
+  background-color: white;
 }
 
 .modalH2 {
-    margin-left: 110px;
+  margin-left: 110px;
 }
 
 .quantity {
-    width: 30px;
-    height: 32px;
-    border: 1px solid black;
-    margin-top: 3px;
-    margin-left: 18px;
-    text-align: center;
+  width: 30px;
+  height: 32px;
+  border: 1px solid black;
+  margin-top: 3px;
+  margin-left: 18px;
+  text-align: center;
 }
 
 .info {
-    text-align: center;
+  text-align: center;
 }
