@@ -6,6 +6,7 @@ import {
   add_to_cart_action,
   item_added_to_cart_action,
 } from "../redux/actions";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Acoustic({ acoustic }) {
   const inCart = useSelector((state) => state.guitars.inCart);
@@ -53,11 +54,11 @@ function Acoustic({ acoustic }) {
             data-toggle="modal"
             data-target="#exampleModalCenter"
           >
-            Add to Cart
+            Add to Cart <ShoppingCartIcon />
           </button>
         ) : (
           <button className="btn btn-warning btn-sm float-right">
-            In Cart
+            In Cart <ShoppingCartIcon />
           </button>
         )}
       </div>

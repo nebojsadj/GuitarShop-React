@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { remove_from_cart_action, buy_item_action } from "./redux/actions";
+import DeleteIcon from "@material-ui/icons/Delete";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function CartContent({ guitar, index }) {
   const [quantity, setQuantity] = useState(1);
@@ -45,7 +47,7 @@ function CartContent({ guitar, index }) {
           }}
           className="btn btn-danger btn-sm"
         >
-          Remove
+          <DeleteIcon />
         </button>
       </td>
       <td>
@@ -58,7 +60,7 @@ function CartContent({ guitar, index }) {
           }}
           className="btn btn-primary btn-sm"
         >
-          Buy $
+          <ShoppingCartIcon /> Buy $
         </button>
       </td>
     </tr>

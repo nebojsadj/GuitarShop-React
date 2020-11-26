@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { add_to_cart_action, item_added_to_cart_action } from "./redux/actions";
 import { useHistory } from "react-router-dom";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Display() {
   const display = useSelector((state) => state.guitars.displayInstrument);
@@ -38,10 +39,14 @@ function Display() {
                       data-toggle="modal"
                       data-target="#exampleModalCenter"
                     >
-                      Add to Cart
+                      Add to Cart <ShoppingCartIcon />
                     </button>
                   ) : (
-                    <h2 className="bg-warning text-center add">In Cart</h2>
+                    <>
+                      <h2 className="bg-warning text-center add">
+                        In Cart <ShoppingCartIcon />
+                      </h2>
+                    </>
                   )}
                 </div>
               </div>

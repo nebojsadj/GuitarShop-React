@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Modal() {
   const history = useHistory();
@@ -60,7 +61,7 @@ function Modal() {
                     className="btn btn-primary mt-2 "
                     data-dismiss="modal"
                   >
-                    Go to cart
+                    Go to cart <ShoppingCartIcon />
                   </button>
                 </div>
               </div>

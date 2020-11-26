@@ -18,7 +18,7 @@ function Buy() {
               <h3 className=" mt-4 text-primary info">
                 Your personal information
               </h3>
-              {<PersonalInfo />}
+              <PersonalInfo />
             </div>
           </div>
           <div className="row">
