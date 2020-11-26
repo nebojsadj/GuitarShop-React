@@ -10,10 +10,12 @@ import Modal from "./components/Modal";
 import CustomersInfo from "./components/CustomersInfo";
 import Buy from "./components/Buy";
 import SuccessfulOrder from "./components/SuccessfulOrder";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Modal />
       <Route path="/" exact>
