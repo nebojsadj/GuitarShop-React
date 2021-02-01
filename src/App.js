@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import { Route } from "react-router-dom";
+import Header from "./components/Header";
+import { Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
 import Guitars from "./components/Guitars";
 import ElectricGuitars from "./components/Electric/ElectricGuitars";
 import AcousticGuitars from "./components/Acoustic/AcousticGuitars";
@@ -16,32 +17,37 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <Navbar />
+      <Header />
       <Modal />
-      <Route path="/" exact>
-        <Guitars />
-      </Route>
-      <Route path="/acoustic">
-        <AcousticGuitars />
-      </Route>
-      <Route path="/electric">
-        <ElectricGuitars />
-      </Route>
-      <Route path="/display">
-        <Display />
-      </Route>
-      <Route path="/cart">
-        <MyCart />
-      </Route>
-      <Route path="/info">
-        <CustomersInfo />
-      </Route>
-      <Route path="/buy">
-        <Buy />
-      </Route>
-      <Route path="/successfulOrder">
-        <SuccessfulOrder />
-      </Route>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/guitars">
+          <Guitars />
+        </Route>
+        <Route path="/acoustic">
+          <AcousticGuitars />
+        </Route>
+        <Route path="/electric">
+          <ElectricGuitars />
+        </Route>
+        <Route path="/display">
+          <Display />
+        </Route>
+        <Route path="/cart">
+          <MyCart />
+        </Route>
+        <Route path="/info">
+          <CustomersInfo />
+        </Route>
+        <Route path="/buy">
+          <Buy />
+        </Route>
+        <Route path="/successfulOrder">
+          <SuccessfulOrder />
+        </Route>
+      </Switch>
     </>
   );
 }

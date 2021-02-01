@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Item from "./Item";
 import { Link } from "react-router-dom";
-import { remove_all_from_cart_action } from "./redux/actions";
+import { remove_all_from_cart_action } from "../redux/actions";
 import PersonalInfo from "./PersonalInfo";
 
 function Buy() {

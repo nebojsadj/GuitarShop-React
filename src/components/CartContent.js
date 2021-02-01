@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { remove_from_cart_action, buy_item_action } from "./redux/actions";
+import { remove_from_cart_action, buy_item_action } from "../redux/actions";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import ibanez from "./bg/ibanez.jpg";
-import yamaha from "./bg/yamaha.jpg";
+import ibanez from "../bg/ibanez.jpg";
+import yamaha from "../bg/yamaha.jpg";
 import { Link } from "react-router-dom";
 
 function Guitars() {

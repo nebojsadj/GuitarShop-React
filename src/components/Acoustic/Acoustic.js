@@ -5,7 +5,7 @@ import {
   display_more_action,
   add_to_cart_action,
   item_added_to_cart_action,
-} from "../redux/actions";
+} from "../../redux/actions";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Acoustic({ acoustic }) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { personal_info_action } from "./redux/actions";
+import { personal_info_action } from "../redux/actions";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function CustomersInfo() {

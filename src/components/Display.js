@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { add_to_cart_action, item_added_to_cart_action } from "./redux/actions";
+import {
+  add_to_cart_action,
+  item_added_to_cart_action,
+} from "../redux/actions";
 import { useHistory } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
