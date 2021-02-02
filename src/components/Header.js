@@ -9,27 +9,24 @@ function Header() {
 
   return (
     <Navbar bg="dark" variant="dark">
-      <h4 className="text-light">Guitars shop</h4>
+      <h4 className="text-light brand">Guitars shop</h4>
       <Nav className="mx-auto">
         <NavLink to="/" exact className="text-light nav">
           Home
         </NavLink>
-        <NavLink to="/acoustic" className="text-light ml-2 nav">
-          Acoustic
+        <NavLink to="/guitars" className="text-light ml-2 nav">
+          Guitars
         </NavLink>
-        <NavLink to="/electric" className="text-light ml-2 nav">
-          Electric
+        <NavLink to="/bass" className="text-light ml-2 nav">
+          Bass
+        </NavLink>
+        <NavLink to="/strings" className="text-light ml-2 nav">
+          Strings
         </NavLink>
       </Nav>
       <NavLink to="/cart" className="float-right">
         <div>
-          <FaCartArrowDown
-            style={{
-              color: "white",
-              width: "30px",
-              height: "35px",
-            }}
-          />
+          <FaCartArrowDown className="cartTop" />
           <Badge pill variant="danger">
             {inCart.length}
           </Badge>

@@ -6,14 +6,17 @@
 .active {
   border-bottom: 1px solid red;
 }
+.carousel-item {
+  border-bottom: none !important;
+}
 body {
-  /* background-image: url("bg/img5.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 .nav:hover {
   text-decoration: none !important;
 }
+
 .mCard {
   margin-top: 150px;
 }
@@ -21,7 +24,14 @@ body {
   height: 250px;
   object-fit: cover;
 }
-
+.cartTop {
+  color: white;
+  width: 30px;
+  height: 35px;
+}
+.imgSl {
+  height: 330px !important;
+}
 .card-header {
   font-size: 22px;
   font-style: oblique;
@@ -69,4 +79,68 @@ tbody {
 
 .info {
   text-align: center;
+}
+
+@media all and (max-width: 425px) {
+  .brand {
+    font-size: 15px;
+  }
+  .nav {
+    font-size: 14px;
+  }
+  .cartTop {
+    width: 22px;
+    height: 22px;
+  }
+  .badge-danger {
+    font-size: 10px;
+    width: 16px;
+    height: 12px;
+    padding: 1px 3px;
+  }
+  .imgSl {
+    height: 150px !important;
+  }
+}
+@media all and (max-width: 375px) {
+  .brand {
+    font-size: 14px;
+  }
+  .nav {
+    font-size: 13px;
+  }
+  .cartTop {
+    width: 18px;
+    height: 18px;
+  }
+  .badge-danger {
+    font-size: 10px;
+    width: 14px;
+    height: 10px;
+    padding: 0px 1px;
+  }
+  .imgSl {
+    height: 130px !important;
+  }
+}
+@media all and (max-width: 320px) {
+  .brand {
+    font-size: 12px;
+  }
+  .nav {
+    font-size: 11px;
+  }
+  .cartTop {
+    width: 16px;
+    height: 16px;
+  }
+  .badge-danger {
+    font-size: 9px;
+    width: 12px;
+    height: 10px;
+    padding: 1px 0px;
+  }
+  .imgSl {
+    height: 130px !important;
+  }
 }

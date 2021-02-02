@@ -12,6 +12,9 @@ import CustomersInfo from "./components/CustomersInfo";
 import Buy from "./components/Buy";
 import SuccessfulOrder from "./components/SuccessfulOrder";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
+import Bass from "./components/Bass";
+import Strings from "./components/Strings";
 
 function App() {
   return (
@@ -25,6 +28,12 @@ function App() {
         </Route>
         <Route path="/guitars">
           <Guitars />
+        </Route>
+        <Route path="/bass">
+          <Bass />
+        </Route>
+        <Route path="/strings">
+          <Strings />
         </Route>
         <Route path="/acoustic">
           <AcousticGuitars />
@@ -48,6 +57,7 @@ function App() {
           <SuccessfulOrder />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }
