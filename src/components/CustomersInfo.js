@@ -79,14 +79,19 @@ function CustomersInfo() {
           {(cityPostNumber === check && (
             <p className="text-danger">* please fill in the field</p>
           )) || <br />}
-          <Button onClick={showInfo} className="btn btn-info form-control mb-3">
-            Continue
-          </Button>
-          {success.length === 0 && (
+
+          {success.length !== 0 ? (
+            <Button
+              onClick={showInfo}
+              className="btn btn-info form-control mb-5"
+            >
+              Continue
+            </Button>
+          ) : (
             <Link
               to="/buy"
               onClick={() => dispatch(personal_info_action(info))}
-              className="btn btn-success form-control mb-3"
+              className="btn btn-success form-control mb-5"
             >
               <ShoppingCartIcon /> Buy $
             </Link>

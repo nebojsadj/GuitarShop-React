@@ -7,6 +7,7 @@ import {
 } from "../redux/actions";
 import { useHistory } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 function Display() {
   const display = useSelector((state) => state.guitars.displayInstrument);
@@ -25,9 +26,8 @@ function Display() {
         <Row
           style={{
             border: "1px solid gray",
-            boxShadow: "0 0 5px",
+            boxShadow: "0 0 6px",
             marginTop: "5%",
-            marginBottom: "5%",
           }}
         >
           <Col md={{ span: 6 }}>
@@ -49,8 +49,6 @@ function Display() {
                   setShow(true);
                 }}
                 className="btn btn-danger form-control mt-3"
-                data-toggle="modal"
-                data-target="#exampleModalCenter"
               >
                 Add to Cart <FaCartArrowDown size="1.4em" />
               </Button>
@@ -59,6 +57,14 @@ function Display() {
                 In Cart <FaCartArrowDown size="1.4em" />
               </p>
             )}
+            <Button
+              variant="secondary"
+              onClick={() => history.goBack()}
+              className="mt-3 form-control"
+            >
+              <RiArrowGoBackFill />
+              Go back
+            </Button>
             <p className="text-center text-success mt-3">In stock</p>
             <h5 className="mt-3 text-center">Product description</h5>
             <p>{text}</p>

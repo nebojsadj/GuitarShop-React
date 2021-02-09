@@ -14,15 +14,15 @@ function Buy() {
     <Container>
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <h3 className="mt-4 mx-auto text-primary info">
+          <h5 className="mt-4 mx-auto text-primary info">
             Your personal information
-          </h3>
+          </h5>
           <PersonalInfo />
         </Col>
       </Row>
       <Row>
         <Col md={{ span: 8, offset: 2 }}>
-          <h3 className=" mt-4 text-primary info">Your order</h3>
+          <h5 className=" mt-4 text-primary info">Your order</h5>
           <Table className="table mt-4">
             <thead>
               <tr>
@@ -42,11 +42,11 @@ function Buy() {
       </Row>
       <Row>
         <Col md={{ span: 10, offset: 1 }}>
-          <h3 className="text-danger info">
+          <h5 className="text-danger info">
             {buy.length > 0 &&
               `Total for payment:
                 ${buy.map((el) => el.total).reduce((a, b) => a + b)} $`}
-          </h3>
+          </h5>
         </Col>
       </Row>
       <Row>
