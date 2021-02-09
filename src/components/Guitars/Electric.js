@@ -1,16 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { display_more_action } from "../../redux/actions";
 
 function Electric({ electric }) {
-  const inCart = useSelector((state) => state.guitars.inCart);
-  const idInCart = inCart.map((el) => el.id);
   const dispatch = useDispatch();
   const history = useHistory();
-
-  const { id, name, img, text, price } = electric;
+  const { id, name, img, price } = electric;
 
   return (
     <Card

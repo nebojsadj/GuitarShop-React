@@ -3,19 +3,9 @@ import img1 from "../bg/ac3.jpg";
 import img2 from "../bg/aa3.jpg";
 import img3 from "../bg/ac2.jpg";
 import img4 from "../bg/ad.jpg";
-import {
-  Container,
-  Row,
-  Col,
-  Carousel,
-  Image,
-  Card,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Col, Carousel, Image, Card } from "react-bootstrap";
 import guitars from "../bg/guitars.jpg";
-import bass from "../bg/bass.jpg";
 import strings from "../bg/strings.jpg";
-import electric from "../bg/ibanez.jpg";
 import { useHistory } from "react-router-dom";
 
 function Home() {

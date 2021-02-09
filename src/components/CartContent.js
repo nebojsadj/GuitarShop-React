@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { remove_from_cart_action, buy_item_action } from "../redux/actions";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -12,56 +13,56 @@ function CartContent({ guitar, index }) {
 
   return (
     <tr className="bg-light">
-      <td>{index + 1}</td>
-      <td>{name}</td>
+      <td className="mTab">{index + 1}</td>
+      <td className="mTab">{name}</td>
       <td>
-        <img src={`/imgs/${img}.jpg`} alt="img" width="90" />
+        <Image src={`/imgs/${img}.jpg`} alt="img" width="90" />
       </td>
-      <td>{`${price} $`}</td>
+      <td className="mTab">{`${price} $`}</td>
       <td>
-        <button
+        <Button
           disabled={quantity === 1}
           onClick={() => setQuantity((quantity) => quantity - 1)}
           className="btn btn-warning btn-sm"
         >
           -
-        </button>
+        </Button>
       </td>
       <td>
-        <div className="quantity">{quantity}</div>
+        <div className="quantity mTab">{quantity}</div>
       </td>
       <td>
-        <button
+        <Button
           onClick={() => setQuantity((quantity) => quantity + 1)}
           className="btn btn-warning btn-sm"
         >
           +
-        </button>
+        </Button>
       </td>
-      <td>{`${quantity * price} $`}</td>
+      <td className="mTab">{`${quantity * price} $`}</td>
 
       <td>
-        <button
+        <Button
           onClick={() => {
             dispatch(remove_from_cart_action(id));
           }}
           className="btn btn-danger btn-sm"
         >
           <DeleteIcon />
-        </button>
+        </Button>
       </td>
       <td>
-        <button
+        <Button
           disabled={buy.map((el) => el.name).includes(name)}
           onClick={() => {
             dispatch(
               buy_item_action(id, name, price, quantity, quantity * price)
             );
           }}
-          className="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm mTab"
         >
           <ShoppingCartIcon /> Buy $
-        </button>
+        </Button>
       </td>
     </tr>
   );

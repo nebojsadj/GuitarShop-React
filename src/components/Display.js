@@ -85,7 +85,7 @@ function Display() {
         </Modal.Header>
         <Modal.Body>
           <h4 className="text-center">{itemAddedToCart.name}</h4>
-          <img
+          <Image
             src={`/imgs/${itemAddedToCart.img}.jpg`}
             alt="img"
             width="200"

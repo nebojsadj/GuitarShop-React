@@ -73,6 +73,9 @@ tbody {
 .modalH2 {
   margin-left: 110px;
 }
+.holderF {
+  min-height: 604px;
+}
 
 .quantity {
   width: 30px;
@@ -87,6 +90,11 @@ tbody {
 }
 .info {
   text-align: center;
+}
+@media all and (max-width: 768px) {
+  .mTab {
+    font-size: 14px !important;
+  }
 }
 
 @media all and (max-width: 425px) {
@@ -130,6 +138,9 @@ tbody {
   .imgSl {
     height: 130px !important;
   }
+  .modal-footer > .btn {
+    font-size: 15px;
+  }
 }
 @media all and (max-width: 320px) {
   .brand {
@@ -150,5 +161,8 @@ tbody {
   }
   .imgSl {
     height: 130px !important;
+  }
+  .modal-footer > .btn {
+    font-size: 13px;
   }
 }

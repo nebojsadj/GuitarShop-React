@@ -1,5 +1,6 @@
 import React from "react";
 import CartContent from "./CartContent";
+import { Container, Row, Col, Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -8,56 +9,62 @@ function MyCart() {
   const buy = useSelector((state) => state.guitars.buy);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
+    <Container>
+      <Row className="holderF">
+        <Col md={{ span: 10, offset: 1 }} xs={{ span: 12 }}>
           <h2 className="text-dark text-center mt-4">My shopping cart</h2>
           {inCart.length === 0 ? (
             <h1 className="text-center text-danger">Your cart is empty!</h1>
           ) : (
-            <div className="col-12 mt-4">
-              <table className="table mt-4">
-                <thead>
-                  <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>img</th>
-                    <th>price</th>
-                    <th>less</th>
-                    <th>quantity</th>
-                    <th>more</th>
-                    <th>total</th>
-                    <th>remove</th>
-                    <th>buyItem</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {inCart.map((guitar, index) => (
-                    <CartContent guitar={guitar} key={index} index={index} />
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <Table className="table-responsive mt-4">
+              <thead>
+                <tr>
+                  <th className="mTab">id</th>
+                  <th className="mTab">name</th>
+                  <th className="mTab">img</th>
+                  <th className="mTab">price</th>
+                  <th className="mTab">less</th>
+                  <th className="mTab">quantity</th>
+                  <th className="mTab">more</th>
+                  <th className="mTab">total</th>
+                  <th className="mTab">remove</th>
+                  <th className="mTab">buyItem</th>
+                </tr>
+              </thead>
+              <tbody>
+                {inCart.map((guitar, index) => (
+                  <CartContent guitar={guitar} key={index} index={index} />
+                ))}
+              </tbody>
+            </Table>
           )}
-          <div className="row mt-5">
+          <Row className="mt-5">
             {inCart.length > 0 && (
-              <div className="col-4 offset-4">
+              <Col
+                md={{ span: 4, offset: 4 }}
+                xs={{ span: 8, offset: 2 }}
+                className="mb-4"
+              >
                 <Link to="/" className="btn btn-primary form-control">
                   Continue shopping
                 </Link>
-              </div>
+              </Col>
             )}
             {buy.length > 0 && (
-              <div className="col-4 offset-4">
-                <Link to="/info" className="btn btn-success form-control mt-4">
+              <Col
+                md={{ span: 4, offset: 4 }}
+                xs={{ span: 8, offset: 2 }}
+                className="mb-4"
+              >
+                <Link to="/info" className="btn btn-success form-control">
                   Confirm Buy
                 </Link>
-              </div>
+              </Col>
             )}
-          </div>
-        </div>
-      </div>
-    </div>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
