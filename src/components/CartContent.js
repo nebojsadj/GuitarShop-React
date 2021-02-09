@@ -12,11 +12,11 @@ function CartContent({ guitar, index }) {
   const buy = useSelector((state) => state.guitars.buy);
 
   return (
-    <tr className="bg-light">
+    <tr>
       <td className="mTab">{index + 1}</td>
       <td className="mTab">{name}</td>
       <td>
-        <Image src={`/imgs/${img}.jpg`} alt="img" width="90" />
+        <Image src={`/imgs/${img}.jpg`} alt="img" width="60" />
       </td>
       <td className="mTab">{`${price} $`}</td>
       <td>

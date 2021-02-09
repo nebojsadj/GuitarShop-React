@@ -58,10 +58,6 @@ th {
   background-color: rgba(115, 123, 133, 0.877);
 }
 
-tbody {
-  background-color: white;
-}
-
 .modalH2 {
   margin-left: 110px;
 }
@@ -70,8 +66,8 @@ tbody {
 }
 
 .quantity {
-  width: 30px;
-  height: 32px;
+  width: 25px;
+  height: 28px;
   border: 1px solid black;
   margin-top: 3px;
   margin-left: 18px;
@@ -82,6 +78,13 @@ tbody {
 }
 .info {
   text-align: center;
+}
+.footerLinks {
+  text-decoration: none !important;
+  color: white;
+}
+.footerLinks:hover {
+  color: red;
 }
 @media all and (max-width: 768px) {
   .mTab {

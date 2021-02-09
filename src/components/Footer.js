@@ -7,6 +7,7 @@ import {
   FaPinterestP,
 } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -17,10 +18,18 @@ function Footer() {
             <Col md={{ span: 4, offset: 0 }} xs={{ span: 3, offset: 1 }}>
               <h5 className="text-light">Pages</h5>
               <ul className="list-unstyled text-light mt-3">
-                <li>Home</li>
-                <li>Guitars</li>
-                <li>Bass</li>
-                <li>Strings</li>
+                <Link to="/" className="footerLinks">
+                  <li>Home</li>
+                </Link>
+                <Link to="/guitars" className="footerLinks">
+                  <li>Guitars</li>
+                </Link>
+                <Link to="/strings" className="footerLinks">
+                  <li>Strings</li>
+                </Link>
+                <Link to="/cart" className="footerLinks">
+                  <li>Cart</li>
+                </Link>
               </ul>
             </Col>
             <Col md={{ span: 4, offset: 0 }} xs={{ span: 8, offset: 0 }}>
