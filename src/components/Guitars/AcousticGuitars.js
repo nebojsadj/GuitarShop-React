@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Col, Row } from "react-bootstrap";
 import Acoustic from "./Acoustic";
 import { useSelector } from "react-redux";
 
@@ -7,19 +8,20 @@ function AcousticGuitars() {
   const acousticGuitars = guitars.filter((el) => el.type === "acoustic");
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-10 offset-1">
-          <div className="row">
+    <Container>
+      <Row>
+        <Col md={{ span: 10, offset: 1 }} xs={{ span: 10, offset: 1 }}>
+          <h3 className="mt-4 mb-4 text-center">Acoustic Guitars</h3>
+          <Row>
             {acousticGuitars.map((acoustic, index) => (
-              <div className="col-12" key={index}>
+              <Col className="d-flex justify-content-around" key={index}>
                 <Acoustic acoustic={acoustic} />
-              </div>
+              </Col>
             ))}
-          </div>
-        </div>
-      </div>
-    </div>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

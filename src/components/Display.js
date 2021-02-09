@@ -1,78 +1,108 @@
-import React from "react";
+import React, { useState } from "react";
+import { Container, Col, Row, Image, Modal, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import {
   add_to_cart_action,
   item_added_to_cart_action,
 } from "../redux/actions";
 import { useHistory } from "react-router-dom";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { FaCartArrowDown } from "react-icons/fa";
 
 function Display() {
   const display = useSelector((state) => state.guitars.displayInstrument);
   const inCart = useSelector((state) => state.guitars.inCart);
+  const itemAddedToCart = useSelector((state) => state.guitars.itemAddedToCart);
   const idInCart = inCart.map((el) => el.id);
   const dispatch = useDispatch();
   const history = useHistory();
   const { id, name, img, text, price, description } = display;
 
+  const [show, setShow] = useState(false);
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-10 offset-1">
-          <div className="card">
-            <div className="card-header bg-secondary text-light">
-              <h3>{name || history.push("/")}</h3>
-            </div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-10">
-                  <img src={`/imgs/${img}.jpg`} alt="img" width="100%" />
-                </div>
-                <div className="col-2">
-                  <div>
-                    <div className="price">{`Our price: ${price} $`}</div>
-                  </div>
-                  {idInCart.indexOf(id) === -1 ? (
-                    <button
-                      onClick={() => {
-                        dispatch(add_to_cart_action(display));
-                        dispatch(item_added_to_cart_action());
-                      }}
-                      className="btn btn-danger add"
-                      data-toggle="modal"
-                      data-target="#exampleModalCenter"
-                    >
-                      Add to Cart <ShoppingCartIcon />
-                    </button>
-                  ) : (
-                    <>
-                      <h2 className="bg-warning text-center add">
-                        In Cart <ShoppingCartIcon />
-                      </h2>
-                    </>
-                  )}
-                </div>
-              </div>
-              <div className="col-10 offset-1">
-                <p>{text}</p>
-              </div>
-              <div className="row mt-4">
-                <div className="col-10 offset-1">
-                  <ul className="list-group-flush">
-                    {description &&
-                      description.map((el, index) => (
-                        <li className="list-group-item" key={index}>
-                          {el}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Container>
+        <Row
+          style={{
+            border: "1px solid gray",
+            boxShadow: "0 0 5px",
+            marginTop: "5%",
+            marginBottom: "5%",
+          }}
+        >
+          <Col md={{ span: 6 }}>
+            <Image
+              src={`/imgs/${img}.jpg`}
+              alt="img"
+              width="100%"
+              className="mt-2 mb-2"
+            />
+          </Col>
+          <Col md={{ span: 6 }}>
+            <h3 className="text-center mt-5">{name || history.push("/")}</h3>
+            <div className="bg-warning price mt-4">{`Our price: ${price} $`}</div>
+            {idInCart.indexOf(id) === -1 ? (
+              <Button
+                onClick={() => {
+                  dispatch(add_to_cart_action(display));
+                  dispatch(item_added_to_cart_action());
+                  setShow(true);
+                }}
+                className="btn btn-danger form-control mt-3"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+              >
+                Add to Cart <FaCartArrowDown size="1.4em" />
+              </Button>
+            ) : (
+              <p className="bg-warning text-center mt-3 add">
+                In Cart <FaCartArrowDown size="1.4em" />
+              </p>
+            )}
+            <p className="text-center text-success mt-3">In stock</p>
+            <h5 className="mt-3 text-center">Product description</h5>
+            <p>{text}</p>
+          </Col>
+          <Row>
+            <Col md={{ span: 10, offset: 1 }} xs={{ span: 10, offset: 1 }}>
+              <h5 className="mt-3 text-center">Technical specification</h5>
+              <p>{description}</p>
+            </Col>
+          </Row>
+        </Row>
+      </Container>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header className="bg-warning">
+          <Modal.Title id="contained-modal-title-vcenter" className="mx-auto">
+            Item added to cart
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4 className="text-center">{itemAddedToCart.name}</h4>
+          <img
+            src={`/imgs/${itemAddedToCart.img}.jpg`}
+            alt="img"
+            width="200"
+            className="d-block mx-auto mt-3"
+          />
+          <h5 className="text-center mt-3">{`${itemAddedToCart.price} $`}</h5>
+        </Modal.Body>
+        <Modal.Footer className="mx-auto">
+          <Button onClick={() => setShow(false)} variant="warning">
+            Continue shopping
+          </Button>
+          <Button onClick={() => history.push("/cart")}>
+            Go to cart <FaCartArrowDown size="1.4em" />
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 

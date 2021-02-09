@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navbar, Nav, Badge } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 
 function Header() {
@@ -16,9 +16,6 @@ function Header() {
         </NavLink>
         <NavLink to="/guitars" className="text-light ml-2 nav">
           Guitars
-        </NavLink>
-        <NavLink to="/bass" className="text-light ml-2 nav">
-          Bass
         </NavLink>
         <NavLink to="/strings" className="text-light ml-2 nav">
           Strings

@@ -16,25 +16,20 @@ import guitars from "../bg/guitars.jpg";
 import bass from "../bg/bass.jpg";
 import strings from "../bg/strings.jpg";
 import electric from "../bg/ibanez.jpg";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Home() {
   const bg = [img1, img2, img3, img4];
+  const history = useHistory();
   const category = [
     {
       type: "Guitars",
       img: guitars,
-      link: "/guitars",
     },
-    {
-      type: "Bass",
-      img: bass,
-      link: "/bass",
-    },
+
     {
       type: "Strings",
       img: strings,
-      link: "/strings",
     },
   ];
 
@@ -59,7 +54,11 @@ function Home() {
       <Row>
         {category.map((el) => (
           <Col key={el.type} className="d-flex justify-content-around">
-            <Card style={{ width: "20rem" }}>
+            <Card
+              onClick={() => history.push(`/${el.type.toLowerCase()}`)}
+              style={{ width: "20rem", boxShadow: "0 0 8px black" }}
+              className="cardCat mt-3 mb-3"
+            >
               <Card.Header className="text-center text-light bg-dark">
                 {el.type}
               </Card.Header>
@@ -70,19 +69,22 @@ function Home() {
       </Row>
       <hr style={{ border: "1px solid black" }} />
       <Row>
-        <h4 className="mt-4 mx-auto">About us</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
-          sapiente. Accusantium eaque, voluptates, ex sapiente quibusdam omnis
-          illo dolorem fugiat aliquid facilis ducimus nisi temporibus earum, sit
-          delectus impedit molestiae. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Vel sapiente officiis culpa dignissimos, veritatis
-          eaque placeat minima non. Dolore fugiat deserunt ipsa rerum illum
-          porro facilis alias dolorum saepe! Quaerat. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Odit, blanditiis sunt. Dolorum, itaque
-          quae sit consequuntur dicta eaque pariatur numquam eveniet, ipsa
-          deleniti commodi facilis voluptas laboriosam dolorem? Rem, delectus.
-        </p>
+        <Col md={{ span: 12, offset: 0 }} xs={{ span: 10, offset: 1 }}>
+          <h4 className="mt-4 text-center">About us</h4>
+          <p className="mb-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+            sapiente. Accusantium eaque, voluptates, ex sapiente quibusdam omnis
+            illo dolorem fugiat aliquid facilis ducimus nisi temporibus earum,
+            sit delectus impedit molestiae. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Vel sapiente officiis culpa
+            dignissimos, veritatis eaque placeat minima non. Dolore fugiat
+            deserunt ipsa rerum illum porro facilis alias dolorum saepe!
+            Quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Odit, blanditiis sunt. Dolorum, itaque quae sit consequuntur dicta
+            eaque pariatur numquam eveniet, ipsa deleniti commodi facilis
+            voluptas laboriosam dolorem? Rem, delectus.
+          </p>
+        </Col>
       </Row>
     </Container>
   );

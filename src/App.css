@@ -17,17 +17,24 @@ body {
   text-decoration: none !important;
 }
 
-.mCard {
-  margin-top: 150px;
-}
 .catImg {
-  height: 250px;
+  height: 300px;
   object-fit: cover;
 }
 .cartTop {
   color: white;
   width: 30px;
   height: 35px;
+}
+.card:hover {
+  cursor: pointer;
+  border: 3px solid gray;
+}
+.cardCat:hover {
+  cursor: pointer;
+}
+.cardCat:hover > div {
+  background-color: red !important;
 }
 .imgSl {
   height: 330px !important;
@@ -38,13 +45,12 @@ body {
 }
 
 .price {
-  font-size: 26px;
+  font-size: 22px;
   text-align: center;
-  background-color: lightgreen;
 }
 
 .add {
-  margin-top: 400px;
+  padding: 6px 12px;
 }
 
 .img {
@@ -76,7 +82,9 @@ tbody {
   margin-left: 18px;
   text-align: center;
 }
-
+.mCall {
+  font-size: 20px;
+}
 .info {
   text-align: center;
 }

@@ -2,18 +2,16 @@ import React from "react";
 import Header from "./components/Header";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Guitars from "./components/Guitars";
-import ElectricGuitars from "./components/Electric/ElectricGuitars";
-import AcousticGuitars from "./components/Acoustic/AcousticGuitars";
+import Guitars from "./components/Guitars/Guitars";
+import ElectricGuitars from "./components/Guitars/ElectricGuitars";
+import AcousticGuitars from "./components/Guitars/AcousticGuitars";
 import Display from "./components/Display";
 import MyCart from "./components/MyCart";
-import Modal from "./components/Modal";
 import CustomersInfo from "./components/CustomersInfo";
 import Buy from "./components/Buy";
 import SuccessfulOrder from "./components/SuccessfulOrder";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
-import Bass from "./components/Bass";
 import Strings from "./components/Strings";
 
 function App() {
@@ -21,16 +19,12 @@ function App() {
     <>
       <ScrollToTop />
       <Header />
-      <Modal />
       <Switch>
         <Route path="/" exact>
           <Home />
         </Route>
         <Route path="/guitars">
           <Guitars />
-        </Route>
-        <Route path="/bass">
-          <Bass />
         </Route>
         <Route path="/strings">
           <Strings />
