@@ -1,5 +1,6 @@
 import {
   DISPLAY_MORE,
+  DISPLAY_STRINGS,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   ITEM_ADDED_TO_CART,
@@ -11,6 +12,13 @@ import {
 export const display_more_action = (id) => {
   return {
     type: DISPLAY_MORE,
+    payload: id,
+  };
+};
+
+export const display_string_action = (id) => {
+  return {
+    type: DISPLAY_STRINGS,
     payload: id,
   };
 };

@@ -9,10 +9,6 @@
 .carousel-item {
   border-bottom: none !important;
 }
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .nav:hover {
   text-decoration: none !important;
 }
@@ -60,10 +56,6 @@ body {
 th {
   color: white;
   background-color: rgba(115, 123, 133, 0.877);
-}
-
-td {
-  font-size: 20px;
 }
 
 tbody {

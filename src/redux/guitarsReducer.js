@@ -1,6 +1,7 @@
 import initState from "./initState";
 import {
   DISPLAY_MORE,
+  DISPLAY_STRINGS,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   ITEM_ADDED_TO_CART,
@@ -14,6 +15,9 @@ function guitarsReducer(state = initState, action) {
     case DISPLAY_MORE:
       const guitar = state.guitars.filter((el) => el.id === action.payload)[0];
       return { ...state, displayInstrument: guitar };
+    case DISPLAY_STRINGS:
+      const string = state.strings.filter((el) => el.id === action.payload)[0];
+      return { ...state, displayInstrument: string };
     case ADD_TO_CART:
       return {
         ...state,
