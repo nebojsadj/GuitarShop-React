@@ -4,10 +4,10 @@ function Item({ item }) {
   const { name, price, quantity, total } = item;
   return (
     <tr>
-      <td>{name}</td>
-      <td>{`${price} $`}</td>
-      <td>{quantity}</td>
-      <td>{`${total} $`}</td>
+      <td className="mTab">{name}</td>
+      <td className="mTab">{`${price} $`}</td>
+      <td className="mTab">{quantity}</td>
+      <td className="mTab">{`${total} $`}</td>
     </tr>
   );
 }
