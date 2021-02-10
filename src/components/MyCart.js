@@ -12,9 +12,9 @@ function MyCart() {
     <Container>
       <Row className="holderF">
         <Col md={{ span: 10, offset: 1 }} xs={{ span: 12 }}>
-          <h2 className="text-dark text-center mt-4">My shopping cart</h2>
+          <h2 className="text-dark text-center mt-4 msg">My shopping cart</h2>
           {inCart.length === 0 ? (
-            <h1 className="text-center text-danger">Your cart is empty!</h1>
+            <h1 className="text-center text-danger msg">Your cart is empty!</h1>
           ) : (
             <Table className="table-responsive mt-4">
               <thead>

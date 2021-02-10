@@ -26,7 +26,7 @@ function CustomersInfo() {
 
   return (
     <Container>
-      <h2 className="text-center mt-5">Your personal information</h2>
+      <h2 className="mt-5 info">Your personal information</h2>
       <Row className="mt-5">
         <Col md={{ span: 8, offset: 2 }} xs={{ span: 10, offset: 1 }}>
           <FormControl

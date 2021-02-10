@@ -28,6 +28,7 @@ function Display() {
             border: "1px solid gray",
             boxShadow: "0 0 6px",
             marginTop: "5%",
+            marginBottom: "5%",
           }}
         >
           <Col md={{ span: 6 }}>
@@ -35,12 +36,15 @@ function Display() {
               src={`/imgs/${img}.jpg`}
               alt="img"
               width="100%"
-              className="mt-2 mb-2"
+              className="mt-4 mImgDis"
             />
           </Col>
           <Col md={{ span: 6 }}>
             <h3 className="text-center mt-5">{name || history.push("/")}</h3>
-            <div className="bg-warning price mt-4">{`Our price: ${price} $`}</div>
+            <div
+              className="bg-warning text-center mt-4"
+              style={{ padding: "6px 12px" }}
+            >{`Our price: ${price} $`}</div>
             {idInCart.indexOf(id) === -1 ? (
               <Button
                 onClick={() => {
@@ -65,12 +69,17 @@ function Display() {
               <RiArrowGoBackFill />
               Go back
             </Button>
-            <p className="text-center text-success mt-3">In stock</p>
-            <h5 className="mt-3 text-center">Product description</h5>
-            <p>{text}</p>
+            <div
+              className="text-success text-center mt-3"
+              style={{ backgroundColor: "#ddd", padding: "6px 12px" }}
+            >
+              In stock
+            </div>
           </Col>
           <Row>
             <Col md={{ span: 10, offset: 1 }} xs={{ span: 10, offset: 1 }}>
+              <h5 className="mt-3 text-center">Product description</h5>
+              <p>{text}</p>
               <h5 className="mt-3 text-center">Technical specification</h5>
               <p>{description}</p>
             </Col>

@@ -54,11 +54,41 @@ function Footer() {
       <hr className="bg-light mx-auto" width="90%" />
       <Row>
         <Col className="text-light d-flex justify-content-center">
-          <FaFacebookF size="1.7em" className="ml-2" />
-          <FaTwitter size="2em" className="ml-2" />
-          <FaYoutube size="2em" className="ml-2" />
-          <FaPinterestP size="1.7em" className="ml-2" />
-          <AiFillInstagram size="2em" className="ml-2" />
+          <a
+            href="https://www.facebook.com"
+            target="blanc"
+            className="footerLinks"
+          >
+            <FaFacebookF size="1.7em" className="ml-2" />
+          </a>
+          <a
+            href="https://www.twitter.com"
+            target="blanc"
+            className="footerLinks"
+          >
+            <FaTwitter size="2em" className="ml-2" />
+          </a>
+          <a
+            href="https://www.youtube.com"
+            target="blanc"
+            className="footerLinks"
+          >
+            <FaYoutube size="2em" className="ml-2" />
+          </a>
+          <a
+            href="https://www.pinterest.com"
+            target="blanc"
+            className="footerLinks"
+          >
+            <FaPinterestP size="1.7em" className="ml-2" />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="blanc"
+            className="footerLinks"
+          >
+            <AiFillInstagram size="2em" className="ml-2" />
+          </a>
         </Col>
       </Row>
       <Row>
