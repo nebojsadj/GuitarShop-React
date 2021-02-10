@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { personal_info_action } from "../redux/actions";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { FaCartArrowDown } from "react-icons/fa";
 import { Col, Container, Row, FormControl, Button } from "react-bootstrap";
 
 function CustomersInfo() {
@@ -93,7 +93,7 @@ function CustomersInfo() {
               onClick={() => dispatch(personal_info_action(info))}
               className="btn btn-success form-control mb-5"
             >
-              <ShoppingCartIcon /> Buy $
+              <FaCartArrowDown size="1.4em" /> Buy $
             </Link>
           )}
         </Col>
